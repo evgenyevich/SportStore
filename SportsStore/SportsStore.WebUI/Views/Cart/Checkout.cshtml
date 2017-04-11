@@ -1,0 +1,29 @@
+﻿@using System.Web.UI.WebControls
+@model SportsStore.Domain.Entityes.ShippingDetails
+
+@{
+    ViewBag.Title = "Спортивный магазин : Оформление заказа";
+}
+
+<h2>Оформление заказа</h2>
+
+Пожалуйста, введите свои данные, и мы отправим ваш товар прямо сейчас!
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <h3>Ship to</h3>
+    <div>Name: @Html.EditorFor(x => x.Name)</div>
+    <h3>Address</h3>
+    <div>Line 1: @Html.EditorFor(x => x.Line1)</div>
+    <div>Line 2: @Html.EditorFor(x => x.Line2)</div>
+    <div>Line 3: @Html.EditorFor(x => x.Line3)</div>
+    <div>City: @Html.EditorFor(x => x.City)</div>
+    <h3>Options</h3>
+    <label>
+        @Html.EditorFor(x => x.GiftWrap)
+        Подарочная упаковка
+    </label>
+    <p align="center">
+        <input class="actionButtons" type="submit" value="Оформить заказ" />
+    </p>
+}

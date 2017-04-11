@@ -1,0 +1,33 @@
+﻿@model SportsStore.Domain.Entityes.Cart
+@*<style type="text/css">
+    H2 {
+        margin-top: 0.3em;
+    }
+
+    TFOOT TD {
+        border-top: 1px dotted gray;
+        font-weight: bold;
+    }
+
+    .actionButtons A, INPUT.actionButtons {
+        font: .8em Arial;
+        color: White;
+        margin: .5em;
+        text-decoration: none;
+        padding: .15em 1.5em .2em 1.5em;
+        background-color: #353535;
+        border: 1px solid black;
+    }
+</style>*@
+<ul class="nav navbar-nav navbar-right">
+   
+    @if (Model.Lines.Sum(x => x.Quantity) > 0)
+    {
+        <li style="float: right; padding-top: 10px; padding-bottom: 15px;color: #999999">
+            : @Model.Lines.Sum(x => x.Quantity) ед., @Model.ComputeTotalValue().ToString("c") 
+        </li>
+        <li  style="float: right">@Html.ActionLink("Оформить заказ", "Checkout")</li>
+    }
+    <li style="float: right"> @Html.ActionLink("Корзина", "Index", "Cart", new {returnUrl = Request.Url.PathAndQuery}, null)</li>
+</ul>
+

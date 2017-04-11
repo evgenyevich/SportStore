@@ -1,0 +1,10 @@
+﻿@model SportsStore.Domain.Entityes.Cart
+<div>
+    <span>
+        <b>Корзина : </b>
+        @Model.Lines.Sum(x => x.Quantity) шт.,
+        @Model.ComputeTotalValue().ToString("c")
+    </span>
+    @Html.ActionLink("Подробнее", "Index", "Cart", new { returnUrl = Request.Url.PathAndQuery }, null)
+</div>
+

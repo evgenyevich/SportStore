@@ -1,0 +1,28 @@
+﻿@model SportsStore.Domain.Entityes.Product
+<style type="text/css">
+    .normbutton {
+        font: .8em Arial;
+        color: White;
+        margin: .5em;
+        text-decoration: none;
+        padding: .15em 1.5em .2em 1.5em;
+        background-color: #353535;
+        border: 1px solid black;
+        text-align: right
+    }
+</style>
+<div align="right">
+    <h2>@Model.Name</h2>
+    @Model.Description
+    <h3>@Model.Price.ToString("c")</h3>
+    @using (@Html.BeginForm("AddToCart", "Cart"))
+    {
+        @Html.HiddenFor(o => o.ProductID)
+        if (Request.Url != null)
+        {
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+        }
+        <input class="normbutton" type="submit" value="+ Добавить в корзину" />
+    }
+    <hr />
+</div>

@@ -1,0 +1,11 @@
+﻿@model IEnumerable<string>
+
+@Html.ActionLink("Отобразить все", "Index", "Home", null, new { @class = (!(Model.AsEnumerable().Any(o => o.ToString() == ViewBag.SelectedCategory))) ? "selected" : null })
+
+
+@foreach (var link in Model)
+{
+    @Html.RouteLink(link, new{controller = "Home",action = "Index",category = link,page = 1},new { @class=link == ViewBag.SelectedCategory ? "selected" : null })
+   
+}
+
