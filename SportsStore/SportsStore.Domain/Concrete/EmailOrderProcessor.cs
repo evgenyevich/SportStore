@@ -74,7 +74,7 @@ namespace SportsStore.Domain.Concrete
                     body.ToString()); // Body
                 if(emailSettings.WriteAsFile)
                 {
-                    mailMessage.BodyEncoding = Encoding.ASCII;
+                    mailMessage.BodyEncoding = Encoding.Default;
                 }
                 smtpClient.Send(mailMessage);
             }
