@@ -19,6 +19,11 @@ namespace SportsStore.WebUI.Infrastructure
             ninjectKernel = new StandardKernel();
             AddBindings();
         }
+
+        public NinjectControllerFactory(IControllerActivator controllerActivator) : base(controllerActivator)
+        {
+        }
+
         protected override IController GetControllerInstance(RequestContext requestContext,Type controllerType)
         {
             return controllerType == null ? null : (IController)ninjectKernel.Get(controllerType);
@@ -40,5 +45,7 @@ namespace SportsStore.WebUI.Infrastructure
             ninjectKernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>().WithConstructorArgument("settings", emailSettings);
 
         }
+
+       
     }
 }

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<SportsStore.Domain.Entityes.Product>
+﻿@using System.Web.UI.WebControls
+@model IEnumerable<SportsStore.Domain.Entityes.Product>
 
 @{
     ViewBag.Title = "Админ";
@@ -25,10 +26,12 @@
             <td>@Html.DisplayFor(modelItem => item.Price)</td>
             <td>@Html.DisplayFor(modelItem => item.Category)</td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { productId = item.ProductID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
+                @*@Html.ActionLink("Редактировать", "Edit", new { productId = item.ProductID }) |*@
+                @*@Html.ActionLink("Details", "Details", new { id = item.ProductID }) |*@
+                @Html.ActionLink("Delete", "Delete",  new { productId = item.ProductID })
+                @*<input type="button" value="Create" onclick="location.href='@Url.Action("Delete", "Admin")'" />*@
             </td>
+               
         </tr>
     }
 </table>
