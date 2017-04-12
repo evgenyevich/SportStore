@@ -50,7 +50,7 @@ namespace SportsStore.WebUI.Models
     {
         [Required]
         [Display(Name = "Адрес электронной почты")]
-        [EmailAddress]
+        //[EmailAddress]
         public string Email { get; set; }
 
         [Required]

@@ -38,11 +38,11 @@ namespace SportsStore.Domain.Concrete
         {
             Product dbEntry = context.Products.Find(productID);
 
-            //if(dbEntry != null)
-            //{
-            //    context.Products.Remove(dbEntry);
-            //    context.SaveChanges();
-            //}
+            if (dbEntry != null)
+            {
+                context.Products.Remove(dbEntry);
+                context.SaveChanges();
+            }
             return dbEntry;
         }
     }

@@ -15,7 +15,9 @@ namespace SportsStore.Domain.Entityes
         public string Description { get; set; }
         [Display(Name = "Цена")]
         [Required(ErrorMessage = "Не указана цена.")]
-        [Range(0.01, double.MaxValue, ErrorMessage = "Цена не может иметь отрицательное значение.")]
+        [Range(0, double.MaxValue, ErrorMessage = "Цена не может иметь отрицательное значение.")]
+        //[Range(1, 100)]
+        //[DataType(DataType.Currency)]
         public decimal Price { get; set; }
         [Display(Name = "Категория")]
         [Required(ErrorMessage = "Не указана категория.")]
