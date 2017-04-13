@@ -58,6 +58,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\Users\bor\Desktop\SportsStore\SportsStore\SportsStore.WebUI\bin\System.Web.Mvc.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
